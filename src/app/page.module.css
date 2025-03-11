@@ -30,6 +30,8 @@
   display: flex;
   align-items: stretch;
   background-color: var(--eucalyptus);
+  background-color: color-mix(in srgb, var(--eucalyptus) 70%, transparent);
+  backdrop-filter: blur(10px);
   color: var(--white);
 }
 .credits {
