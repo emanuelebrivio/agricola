@@ -19,37 +19,38 @@ export default function Home() {
       <main className={styles.main}>
       </main>
       <footer className={styles.footer}>
-        <dl>
-          <div>
-            <dt>Indirizzo</dt>
-            <dd>Via Montello 71, 23873 Missaglia - Lecco</dd>
-          </div>
-          <div>
-            <dt>P.IVA</dt>
-            <dd>01925710137</dd>
-          </div>
-          <div>
-            <dt>SDI</dt>
-            <dd>5W4A8J1</dd>
-          </div>
-          <div>
-            <dt>E-mail</dt>
-            <dd>info@agricolabrivio.com</dd>
-          </div>
-          <div>
-            <dt>PEC</dt>
-            <dd>briviosocietaagricola@pec.coldiretti.it</dd>
-          </div>
-          <div>
-            <Image
-              className={styles.logoCredits}
-              src="/logos/agricolabrivio-logo-mark-green.svg"
-              alt="Azienda Agricola Brivio"
-              width={32}
-              height={32}
-            />
-          </div>
-        </dl>
+        <div className={styles.credits}>
+          <dl>
+            <div>
+              <dt>Indirizzo</dt>
+              <dd>Via Montello 71, 23873 Missaglia - Lecco</dd>
+            </div>
+            <div>
+              <dt>P.IVA</dt>
+              <dd>01925710137</dd>
+            </div>
+            <div>
+              <dt>SDI</dt>
+              <dd>5W4A8J1</dd>
+            </div>
+            <div>
+              <dt>E-mail</dt>
+              <dd>info@agricolabrivio.com</dd>
+            </div>
+            <div>
+              <dt>PEC</dt>
+              <dd>briviosocietaagricola@pec.coldiretti.it</dd>
+            </div>
+          </dl>  
+        </div>
+        <div className={styles.logoCredits}>
+          <Image
+            src="/logos/agricolabrivio-logo-mark-green.svg"
+            alt="Azienda Agricola Brivio"
+            width={32}
+            height={32}
+          />
+        </div>
       </footer>
     </div>
   );
