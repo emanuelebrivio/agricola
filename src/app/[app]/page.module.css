@@ -1,0 +1,18 @@
+.page {
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-lexend);
+}
+
+.header {
+  display: flex;
+  padding: 16px;
+  background-color: var(--eucalyptus);
+}
+.header .logo {
+  display: block;
+}
+
+.main {
+  padding: 24px;
+}

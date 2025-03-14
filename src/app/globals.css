@@ -12,8 +12,6 @@ body {
 }
 
 body {
-  background: var(--eucalyptus);
-  color: var(--white);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
