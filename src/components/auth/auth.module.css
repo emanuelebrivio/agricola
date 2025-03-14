@@ -1,0 +1,57 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--eucalyptus);
+}
+
+.input {
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.15s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--eucalyptus);
+}
+
+.button {
+  background-color: var(--eucalyptus);
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.button:hover {
+  background-color: color-mix(in srgb, var(--eucalyptus) 90%, black);
+}
+
+.button:disabled {
+  background-color: var(--sage);
+  cursor: not-allowed;
+}
+
+.error {
+  color: #e53e3e;
+  font-size: 0.875rem;
+  margin-top: -0.5rem;
+} 

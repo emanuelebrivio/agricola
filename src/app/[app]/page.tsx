@@ -1,7 +1,41 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { AuthCheck } from "@/components/auth/AuthCheck";
+import { createServerClient } from '@supabase/ssr';
+import { cookies } from 'next/headers';
+import { UserActions } from "@/components/auth/UserActions";
 
-export default function Home() {
+export default async function Home() {
+  // Add authentication check
+  await AuthCheck();
+
+  // Get the user data
+  const cookieStore = await cookies();
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        get(name: string) {
+          const cookie = cookieStore.get(name);
+          return cookie?.value;
+        },
+        set(name: string, value: string, options: any) {
+          // This is handled by the middleware
+        },
+        remove(name: string, options: any) {
+          // This is handled by the middleware
+        },
+      },
+    }
+  );
+
+  const { data: { user } } = await supabase.auth.getUser();
+
+  if (!user) {
+    return null; // This shouldn't happen due to AuthCheck, but TypeScript needs it
+  }
+
   return (
     <div className={styles.page}>
       <header className={styles.header}>
@@ -12,11 +46,12 @@ export default function Home() {
           width={32}
           height={32}
           priority
-          />
+        />
+        <UserActions userEmail={user.email || ''} />
       </header>
       <main className={styles.main}>
-        <h2>Presto in arrivo</h2>
-        <p>Prossimamente sarà disponibile la login per accedere al quaderno di campagna e agli altri tool aziendali.</p>
+        <h2>Welcome to your dashboard</h2>
+        <p>You are now logged in to access the farm management tools.</p>
       </main>
     </div>
   );
