@@ -14,12 +14,6 @@ export async function AuthCheck() {
           const cookie = cookieStore.get(name);
           return cookie?.value;
         },
-        set(name: string, value: string, options: any) {
-          // This is handled by the middleware
-        },
-        remove(name: string, options: any) {
-          // This is handled by the middleware
-        },
       },
     }
   );

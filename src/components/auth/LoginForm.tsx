@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { createBrowserClient } from '@supabase/ssr';
 import styles from './auth.module.css';
 import { useRouter } from 'next/navigation';
+import { AuthError } from '@supabase/supabase-js';
 
 export function LoginForm() {
   const [email, setEmail] = useState('');
@@ -34,8 +35,9 @@ export function LoginForm() {
 
       router.refresh(); // Refresh the current page to update server components
       router.push('/app');
-    } catch (err: any) {
-      setError(err.message || 'An error occurred during login');
+    } catch (err) {
+      const authError = err as AuthError;
+      setError(authError.message || 'An error occurred during login');
     } finally {
       setLoading(false);
     }
