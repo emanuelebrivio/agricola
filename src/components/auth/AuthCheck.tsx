@@ -21,7 +21,7 @@ export async function AuthCheck() {
   const { data: { session } } = await supabase.auth.getSession();
 
   if (!session) {
-    redirect('/app/login');
+    redirect('/login');
   }
 
   return null;

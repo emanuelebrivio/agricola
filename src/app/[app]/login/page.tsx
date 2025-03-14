@@ -23,7 +23,7 @@ export default async function LoginPage() {
 
   // If user is already logged in, redirect to app
   if (session) {
-    redirect('/app');
+    redirect('/');
   }
 
   return (

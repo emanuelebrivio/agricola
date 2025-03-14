@@ -14,7 +14,7 @@ export function UserActions({ userEmail }: { userEmail: string }) {
   const handleLogout = async () => {
     await supabase.auth.signOut();
     router.refresh(); // Refresh the current page to update server components
-    router.push('/app/login');
+    router.push('/login');
   };
 
   return (

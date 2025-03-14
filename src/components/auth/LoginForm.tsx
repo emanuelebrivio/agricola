@@ -34,7 +34,7 @@ export function LoginForm() {
       }
 
       router.refresh(); // Refresh the current page to update server components
-      router.push('/app');
+      router.push('/');
     } catch (err) {
       const authError = err as AuthError;
       setError(authError.message || 'An error occurred during login');
